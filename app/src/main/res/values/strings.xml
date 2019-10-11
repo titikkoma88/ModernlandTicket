@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Ticketing Modernland</string>
+    <string name="ticket">Ticketing Apps</string>
+
+    <string name="input_username">Input Username</string>
+    <string name="input_password">Input Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+
+    <string-array name="aplikasi">
+        <item>--Akses Aplikasi--</item>
+        <item>AST Desktop</item>
+        <item>AST WEB</item>
+    </string-array>
+
 </resources>
