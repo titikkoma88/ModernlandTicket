@@ -1,9 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".HomeVendorActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:translationX="-280dp"
+        android:id="@+id/mainmenu"
+        android:orientation="vertical"
+        android:background="#1E2E62"
+        android:layout_width="280dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/userpicbig"
+            android:layout_marginTop="70dp"
+            android:layout_gravity="center"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:src="@drawable/mdln1min"/>
+
+        <TextView
+            android:id="@+id/tvDashboard"
+            android:text="Dashboard Vendor"
+            android:textColor="#FFF"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvSupport"
+            android:text="Support Test"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnPro"
+            android:gravity="left"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="40dp"
+            android:background="#1E2E62"
+            android:textColor="#4B577B"
+            android:textStyle="normal"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:text="Profile"
+            android:layout_width="60dp"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/btnLO"
+            android:gravity="left"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="200dp"
+            android:background="#1E2E62"
+            android:textColor="#FFF"
+            android:textStyle="normal"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:text="Logout"
+            android:layout_width="60dp"
+            android:layout_height="30dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:translationX="-280dp"
+        android:id="@+id/maincontent"
+        android:layout_width="416dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/btnmenu"
+            android:orientation="horizontal"
+            android:gravity="left"
+            android:layout_marginLeft="15dp"
+            android:padding="13dp"
+            android:layout_width="170dp"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:tint="#191919"
+                android:src="@drawable/baseline_arrow_back_andro_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Main Menu"
+                android:textColor="#191919"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDashboardHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="72dp"
+            android:gravity="center"
+            android:text="Dashboard Vendor"
+            android:textColor="#181C34"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tvSupportHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="96dp"
+            android:gravity="center"
+            android:text="Support Test"
+            android:textColor="#181C34"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="132dp"
+            android:gravity="left"
+            android:text="Explore"
+            android:textColor="#181C34"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="170dp"
+            android:gravity="left"
+            android:text="Solving your problems"
+            android:textColor="#181C34"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_marginRight="45dp"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/menuApp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/menuApro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="255dp"
+                    android:src="@drawable/clock" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="304dp"
+                    android:layout_marginStart="51dp"
+                    android:text="Approval "
+                    android:textColor="#181C34"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="255dp"
+                    android:src="@drawable/timerstopwatch" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="304dp"
+                    android:layout_marginStart="40dp"
+                    android:text="Assigment"
+                    android:textColor="#181C34"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="255dp"
+                    android:src="@drawable/timerhourglass" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center"
+                    android:layout_marginBottom="304dp"
+                    android:layout_marginStart="51dp"
+                    android:text="List Ticket"
+                    android:textColor="#181C34"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
