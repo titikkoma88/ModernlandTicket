@@ -85,5 +85,40 @@ public class HomeUserActivity extends AppCompatActivity {
 
             }
         });
+
+        fabNewTkt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(),
+                        NewTicketActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    public void MyTicketUser(View view) {
+
+        android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.AlertDialog.Builder(HomeUserActivity.this);
+        alert.setMessage("Sorry.. This Content Under Construction");
+        alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alert.create().show();
+    }
+
+    public void ListTicketUser(View view) {
+        android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.AlertDialog.Builder(HomeUserActivity.this);
+        alert.setMessage("Sorry.. This Content Under Construction");
+        alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alert.create().show();
     }
 }
