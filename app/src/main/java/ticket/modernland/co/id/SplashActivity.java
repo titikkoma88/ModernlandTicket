@@ -18,11 +18,59 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
+                SharedPreferences sp =
+                        getSharedPreferences("DATALOGIN",
+                                MODE_PRIVATE);
+                String level        =sp.getString("level","");
+
+                if (sp.contains("user")) {
+
+                    if (level.equals("USER")){
+
+                        Intent i = new Intent(getApplicationContext(),
+                                HomeUserActivity.class);
+
+                        i.putExtra("level",
+                                sp.getString("level", ""));
+
+                        i.putExtra("user",
+                                sp.getString("user", ""));
+
+                        i.putExtra("app",
+                                sp.getString("app", ""));
+
+                        startActivity(i);
+                        finish();
+                    }
+
+                    else if (level.equals("VENDOR")){
+
+                        Intent i = new Intent(getApplicationContext(),
+                                HomeVendorActivity.class);
+
+                        i.putExtra("level",
+                                sp.getString("level", ""));
+
+                        i.putExtra("user",
+                                sp.getString("user", ""));
+
+                        i.putExtra("app",
+                                sp.getString("app", ""));
+
+                        startActivity(i);
+                        finish();
+
+                    }
+
+                } else {
+
                     Intent i = new Intent(getApplicationContext(),
                             LoginActivity.class);
 
                     startActivity(i);
                     finish();
+
+                }
 
             }
         }, 5000);

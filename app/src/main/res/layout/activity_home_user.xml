@@ -1,11 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:background="@drawable/bgapps"
     tools:context=".HomeUserActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtDashboard"
+                android:text="@string/dashboardtkt"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtDashboardUT"
+                android:text="@string/homeuser"
+                android:layout_below="@id/txtDashboard"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="6dp"
+                android:layout_below="@id/txtDashboardUT"
+                android:text="2 Items"
+                android:textSize="14sp"
+                android:textColor="#5284FF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/mdln1min"
+                android:layout_width="62dp"
+                android:layout_height="62dp" />
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="3">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:id="@+id/LnMyTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ru.nikartm.support.ImageBadgeView
+                        android:id="@+id/ibv_icon5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_gravity="center"
+                        tools:ibv_badgeValue="0"
+                        tools:ibv_badgeTextSize="16dp"
+                        tools:ibv_badgePadding="5dp"
+                        tools:ibv_badgePosition="bottom_right"
+                        tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                        android:src="@drawable/smartphone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/myticket"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:id="@+id/LnListTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/person_file" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/listticket"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </GridLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp">
+
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/menuFAMA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="11dp"
+                android:layout_marginBottom="200dp"
+                fab:menu_animationDelayPerItem="55"
+                fab:menu_backgroundColor="@android:color/transparent"
+                fab:menu_buttonSpacing="0dp"
+                fab:menu_colorNormal="#da3c2f"
+                fab:menu_colorPressed="#dc4b3f"
+                fab:menu_colorRipple="#99d4d4d4"
+                fab:menu_fab_label=""
+                fab:menu_fab_size="normal"
+                fab:menu_icon="@drawable/fab_add"
+                fab:menu_labels_colorNormal="#333"
+                fab:menu_labels_colorPressed="#444"
+                fab:menu_labels_colorRipple="#66efecec"
+                fab:menu_labels_cornerRadius="3dp"
+                fab:menu_labels_ellipsize="none"
+                fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+                fab:menu_labels_margin="0dp"
+                fab:menu_labels_maxLines="-1"
+                fab:menu_labels_padding="8dp"
+                fab:menu_labels_position="left"
+                fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+                fab:menu_labels_showShadow="true"
+                fab:menu_labels_singleLine="false"
+                fab:menu_labels_textColor="#f2f1f1"
+                fab:menu_labels_textSize="15sp"
+                fab:menu_openDirection="up"
+                fab:menu_shadowColor="#66aff198"
+                fab:menu_shadowRadius="4dp"
+                fab:menu_shadowXOffset="1dp"
+                fab:menu_shadowYOffset="4dp"
+                fab:menu_showShadow="true">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/menuFabExitA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_exit_to_app_black_24dp"
+                    fab:fab_label="Close App"
+                    fab:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/menuFabLogoutA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_repeat_black_24dp"
+                    fab:fab_label="Logout"
+                    fab:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/menuFabNewTkt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_forum_black_24dp"
+                    fab:fab_label="New Ticket"
+                    fab:fab_size="mini" />
+
+            </com.github.clans.fab.FloatingActionMenu>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

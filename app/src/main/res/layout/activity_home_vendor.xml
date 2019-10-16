@@ -25,7 +25,7 @@
 
         <TextView
             android:id="@+id/tvDashboard"
-            android:text="Dashboard Vendor"
+            android:text="@string/dashboardtkt"
             android:textColor="#FFF"
             android:textStyle="normal"
             android:textSize="20sp"
@@ -36,7 +36,7 @@
 
         <TextView
             android:id="@+id/tvSupport"
-            android:text="Support Test"
+            android:text="@string/homevendor"
             android:textColor="#FFF"
             android:textSize="16sp"
             android:gravity="center"
@@ -54,21 +54,35 @@
             android:textStyle="normal"
             android:textSize="18sp"
             android:textAllCaps="false"
-            android:text="Profile"
+            android:text="@string/profile"
             android:layout_width="60dp"
             android:layout_height="30dp" />
 
         <Button
-            android:id="@+id/btnLO"
+            android:id="@+id/btnLo"
             android:gravity="left"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="150dp"
             android:background="#1E2E62"
             android:textColor="#FFF"
             android:textStyle="normal"
             android:textSize="18sp"
             android:textAllCaps="false"
-            android:text="Logout"
+            android:text="@string/logout"
+            android:layout_width="60dp"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:gravity="left"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="10dp"
+            android:background="#1E2E62"
+            android:textColor="#FFF"
+            android:textStyle="normal"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:text="@string/exit"
             android:layout_width="60dp"
             android:layout_height="30dp" />
 
@@ -98,7 +112,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Main Menu"
+                android:text="@string/main"
                 android:textColor="#191919"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
@@ -113,7 +127,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="72dp"
             android:gravity="center"
-            android:text="Dashboard Vendor"
+            android:text="@string/dashboardtkt"
             android:textColor="#181C34"
             android:textSize="20sp"
             android:textStyle="normal" />
@@ -126,7 +140,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="96dp"
             android:gravity="center"
-            android:text="Support Test"
+            android:text="@string/homevendor"
             android:textColor="#181C34"
             android:textSize="16sp"
             android:textStyle="normal" />
@@ -139,7 +153,7 @@
             android:layout_marginStart="44dp"
             android:layout_marginTop="132dp"
             android:gravity="left"
-            android:text="Explore"
+            android:text="@string/explore"
             android:textColor="#181C34"
             android:textSize="20sp"
             android:textStyle="normal" />
@@ -151,7 +165,7 @@
             android:layout_marginStart="44dp"
             android:layout_marginTop="170dp"
             android:gravity="left"
-            android:text="Solving your problems"
+            android:text="@string/solving"
             android:textColor="#181C34"
             android:textSize="16sp"
             android:textStyle="normal" />
@@ -186,7 +200,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginBottom="304dp"
                     android:layout_marginStart="51dp"
-                    android:text="Approval "
+                    android:text="@string/approval"
                     android:textColor="#181C34"
                     android:textSize="16sp" />
 
@@ -199,6 +213,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/menuAssign"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -213,7 +228,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_marginBottom="304dp"
                     android:layout_marginStart="40dp"
-                    android:text="Assigment"
+                    android:text="@string/assigment"
                     android:textColor="#181C34"
                     android:textSize="16sp" />
 
@@ -226,6 +241,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/menuListVend"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -241,7 +257,7 @@
                     android:gravity="center"
                     android:layout_marginBottom="304dp"
                     android:layout_marginStart="51dp"
-                    android:text="List Ticket"
+                    android:text="@string/listticket"
                     android:textColor="#181C34"
                     android:textSize="16sp" />
 

@@ -7,6 +7,26 @@
     <string name="forgot_password">Forgot Password</string>
     <string name="login">Login</string>
 
+    <string name="dashboardtkt">Dashboard </string>
+    <string name="homeuser">User Ticketing </string>
+    <string name="homevendor">Vendor Ticketing </string>
+    <string name="item">Item</string>
+
+    <string name="explore">Explore</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="exit">Exit</string>
+
+    <string name="main">Main Menu</string>
+    <string name="solving">Solving your problems</string>
+
+    <string name="approval">Approval</string>
+    <string name="assigment">Assigment</string>
+    <string name="list">Approval</string>
+
+    <string name="myticket">My Ticket</string>
+    <string name="listticket">List Ticket</string>
+
     <string-array name="aplikasi">
         <item>--Akses Aplikasi--</item>
         <item>AST Desktop</item>
