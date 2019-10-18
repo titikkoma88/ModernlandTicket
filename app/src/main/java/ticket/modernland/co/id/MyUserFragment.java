@@ -29,10 +29,10 @@ import okhttp3.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListUserFragment extends Fragment {
+public class MyUserFragment extends Fragment {
 
 
-    public ListUserFragment() {
+    public MyUserFragment() {
         // Required empty public constructor
     }
 
@@ -41,9 +41,9 @@ public class ListUserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View x = inflater.inflate(R.layout.fragment_list_user, container, false);
+        View x = inflater.inflate(R.layout.fragment_my_user, container, false);
 
-        final RecyclerView rvListU =(RecyclerView) x.findViewById(R.id.rvListU);
+        final RecyclerView rvMyU =(RecyclerView) x.findViewById(R.id.rvMyU);
 
         SharedPreferences sp = getActivity()
                 .getSharedPreferences("DATALOGIN", 0);
@@ -52,11 +52,11 @@ public class ListUserFragment extends Fragment {
         String app          = sp.getString("app", "");
 
         //Toast.makeText(getActivity(),
-        //        "Welcome " + app, Toast.LENGTH_LONG).show();
+        //        "Welcome " + app + "  " + id_user, Toast.LENGTH_LONG).show();
 
-        LinearLayoutManager lml = new LinearLayoutManager(getActivity());
-        lml.setOrientation(LinearLayoutManager.VERTICAL);
-        rvListU.setLayoutManager(lml);
+        LinearLayoutManager lmm = new LinearLayoutManager(getActivity());
+        lmm.setOrientation(LinearLayoutManager.VERTICAL);
+        rvMyU.setLayoutManager(lmm);
 
         // 1. postman
         OkHttpClient postman = new OkHttpClient();
@@ -64,7 +64,7 @@ public class ListUserFragment extends Fragment {
         // 2. request
         Request request = new Request.Builder()
                 .get()
-                .url(Setting.IP + "list_ticket.php?b=" + app)
+                .url(Setting.IP + "mylist_ticket.php?a=" + id_user + "&" + "b=" + app)
                 .build();
 
         // 3. progress dialog
@@ -94,27 +94,27 @@ public class ListUserFragment extends Fragment {
             public void onResponse(Call call, Response response) throws IOException {
                 String hasil = response.body().string();
                 try {
-                    JSONArray jl = new JSONArray(hasil);
+                    JSONArray jm = new JSONArray(hasil);
 
-                    final ListAdapter adapter = new ListAdapter();
-                    adapter.data = new ArrayList<ListTicketUser>();
-                    for (int i = 0;i < jl.length();i++)
+                    final MyAdapter adapter = new MyAdapter();
+                    adapter.data = new ArrayList<MyTicketUser>();
+                    for (int i = 0;i < jm.length();i++)
                     {
-                        JSONObject jo = jl.getJSONObject(i);
-                        ListTicketUser lu = new ListTicketUser();
+                        JSONObject jom = jm.getJSONObject(i);
+                        MyTicketUser mu = new MyTicketUser();
 
-                        lu.reported = jo.getString("nama");
-                        lu.problem_summary = jo.getString("problem_summary");
-                        lu.id_ticket = jo.getString("id_ticket");
+                        mu.reported = jom.getString("nama");
+                        mu.problem_summary = jom.getString("problem_summary");
+                        mu.id_ticket = jom.getString("id_ticket");
 
-                        adapter.data.add(lu);
+                        adapter.data.add(mu);
                     }
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             pd.dismiss();
-                            rvListU.setAdapter(adapter);
+                            rvMyU.setAdapter(adapter);
                         }
                     });
                 } catch (JSONException e) {
