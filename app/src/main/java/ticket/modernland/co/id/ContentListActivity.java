@@ -6,27 +6,43 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
-public class HomeUserActivity extends AppCompatActivity {
+public class ContentListActivity extends AppCompatActivity {
 
-    FloatingActionButton fabLogoutA, fabExitA, fabNewTkt;
+    FloatingActionMenu materialDesignFLu;
+    FloatingActionButton fabLogout, fabExit, fabMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_user);
+        setContentView(R.layout.activity_content_list);
 
-        fabLogoutA = (FloatingActionButton) findViewById(R.id.menuFabLogoutA);
-        fabNewTkt = (FloatingActionButton) findViewById(R.id.menuFabNewTkt);
-        fabExitA = (FloatingActionButton) findViewById(R.id.menuFabExitA);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameListUser, new ListUserFragment())
+                .addToBackStack(null)
+                .commit();
 
-        fabLogoutA.setOnClickListener(new View.OnClickListener() {
+        materialDesignFLu = (FloatingActionMenu) findViewById(R.id.menuFALU);
+        fabLogout = (FloatingActionButton) findViewById(R.id.menuFabLogoutL);
+        fabMain = (FloatingActionButton) findViewById(R.id.menuFabMainL);
+        fabExit = (FloatingActionButton) findViewById(R.id.menuFabExitL);
+
+        fabMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder ab = new AlertDialog.Builder(HomeUserActivity.this);
+                Intent i = new Intent(getApplicationContext(),
+                        HomeUserActivity.class);
+
+                startActivity(i);
+            }
+        });
+
+        fabLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder ab = new AlertDialog.Builder(ContentListActivity.this);
 
                 ab.create();
                 ab.setTitle("Confirmation");
@@ -39,7 +55,7 @@ public class HomeUserActivity extends AppCompatActivity {
                         getSharedPreferences("DATALOGIN", MODE_PRIVATE)
                                 .edit().clear().commit();
 
-                        Intent i = new Intent(HomeUserActivity.this, LoginActivity.class);
+                        Intent i = new Intent(ContentListActivity.this, LoginActivity.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
                         finish();
@@ -57,10 +73,10 @@ public class HomeUserActivity extends AppCompatActivity {
             }
         });
 
-        fabExitA.setOnClickListener(new View.OnClickListener() {
+        fabExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder ab = new AlertDialog.Builder(HomeUserActivity.this);
+                AlertDialog.Builder ab = new AlertDialog.Builder(ContentListActivity.this);
 
                 ab.create();
                 ab.setTitle("Confirmation");
@@ -85,35 +101,6 @@ public class HomeUserActivity extends AppCompatActivity {
 
             }
         });
-
-        fabNewTkt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i = new Intent(getApplicationContext(),
-                        NewTicketActivity.class);
-                startActivity(i);
-            }
-        });
-    }
-
-    public void MyTicketUser(View view) {
-
-        android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.AlertDialog.Builder(HomeUserActivity.this);
-        alert.setMessage("Sorry.. This Content Under Construction");
-        alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        alert.create().show();
-    }
-
-    public void ListTicketUser(View view) {
-
-        Intent i = new Intent(HomeUserActivity.this, ContentListActivity.class);
-        startActivity(i);
 
     }
 }

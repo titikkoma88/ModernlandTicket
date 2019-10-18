@@ -11,6 +11,7 @@
     <string name="homeuser">User Ticketing </string>
     <string name="homevendor">Vendor Ticketing </string>
     <string name="item">Item</string>
+    <string name="menu">Menu</string>
 
     <string name="explore">Explore</string>
     <string name="profile">Profile</string>
@@ -19,6 +20,10 @@
 
     <string name="main">Main Menu</string>
     <string name="solving">Solving your problems</string>
+
+    <string name="idticket">ID Ticket</string>
+    <string name="reported">Reported</string>
+    <string name="summary">Problem Summary</string>
 
     <string name="approval">Approval</string>
     <string name="assigment">Assigment</string>
@@ -32,5 +37,8 @@
         <item>AST Desktop</item>
         <item>AST WEB</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
