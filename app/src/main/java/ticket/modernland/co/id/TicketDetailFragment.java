@@ -62,9 +62,9 @@ public class TicketDetailFragment extends Fragment {
         pd.setCancelable(true);
         pd.show();
 
-        Toast.makeText(getActivity(),
-                "Approve Ticket No " + id,
-                Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity(),
+        //        "Approve Ticket No " + id,
+        //        Toast.LENGTH_LONG).show();
 
         postman.newCall(r).enqueue(new Callback() {
             @Override
