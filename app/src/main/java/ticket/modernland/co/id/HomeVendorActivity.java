@@ -158,7 +158,10 @@ public class HomeVendorActivity extends AppCompatActivity {
         menuapro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomeVendorActivity.this,"Menu Approval", Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(HomeVendorActivity.this, ContentApprovalActivity.class);
+                startActivity(i);
+
             }
         });
 

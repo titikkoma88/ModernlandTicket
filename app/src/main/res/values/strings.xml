@@ -27,9 +27,11 @@
 
     <string name="approval">Approval</string>
     <string name="assigment">Assigment</string>
-    <string name="list">Approval</string>
+    <string name="list">List</string>
+    <string name="cancel">Cancel</string>
 
     <string name="myticket">My Ticket</string>
+    <string name="approve">Approval</string>
     <string name="listticket">List Ticket</string>
 
     <string-array name="aplikasi">
