@@ -89,7 +89,7 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:translationX="-280dp"
+        android:translationX="-300dp"
         android:id="@+id/maincontent"
         android:layout_width="416dp"
         android:layout_height="match_parent">
@@ -184,13 +184,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/menuApro"
+                <ru.nikartm.support.ImageBadgeView
+                    android:id="@+id/ibv_approve"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="255dp"
+                    android:onClick="menuApro"
+                    tools:ibv_badgeValue="0"
+                    tools:ibv_badgeTextSize="16dp"
+                    tools:ibv_badgePadding="5dp"
+                    tools:ibv_badgePosition="top_right"
+                    tools:ibv_badgeBackground="@drawable/rectangle_rounded"
                     android:src="@drawable/clock" />
 
                 <TextView
@@ -212,14 +218,22 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/menuAssign"
+
+                <ru.nikartm.support.ImageBadgeView
+                    android:id="@+id/ibv_Assign"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="255dp"
+                    android:onClick="menuAssign"
+                    tools:ibv_badgeValue="0"
+                    tools:ibv_badgeTextSize="16dp"
+                    tools:ibv_badgePadding="5dp"
+                    tools:ibv_badgePosition="top_right"
+                    tools:ibv_badgeBackground="@drawable/rectangle_rounded"
                     android:src="@drawable/timerstopwatch" />
+
 
                 <TextView
                     android:layout_width="wrap_content"

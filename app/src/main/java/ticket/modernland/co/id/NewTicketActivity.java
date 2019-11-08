@@ -1,15 +1,18 @@
 package ticket.modernland.co.id;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +25,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,6 +40,7 @@ import okhttp3.Response;
 
 public class NewTicketActivity extends AppCompatActivity {
 
+    @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -244,6 +249,17 @@ public class NewTicketActivity extends AppCompatActivity {
             return;
         }
 
+        //ambil imageview
+        ImageView imgFoto = (ImageView) findViewById(R.id.img_foto) ;
+        Bitmap isiGambar = ((BitmapDrawable) imgFoto.getDrawable())
+                .getBitmap();
+
+        // convert ke base64
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        isiGambar.compress(Bitmap.CompressFormat.JPEG, 100,baos);
+        String isifoto = Base64.encodeToString(baos.toByteArray(),
+                Base64.NO_WRAP);
+
         //1. Buka postman
         OkHttpClient postman = new OkHttpClient();
 
@@ -255,6 +271,7 @@ public class NewTicketActivity extends AppCompatActivity {
                 .addFormDataPart("problem_summary", isisubjek)
                 .addFormDataPart("problem_detail", isideskripsi)
                 .addFormDataPart("user", user)
+                .addFormDataPart("foto", isifoto)
                 .addFormDataPart("app", app)
                 .build();
 

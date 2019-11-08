@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ticketing Modernland</string>
+    <string name="app_name">Modernland Ticketing </string>
     <string name="ticket">Ticketing Apps</string>
 
     <string name="input_username">Input Username</string>
@@ -29,15 +29,29 @@
     <string name="assigment">Assigment</string>
     <string name="list">List</string>
     <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="approve">Approve</string>
+    <string name="tracking_prog">Tracking Progress</string>
+
+    <string name="progres_ticket">Update Progress</string>
+    <string name="status_progres">Status Progress</string>
+    <string name="deskripsi_progres">Deskripsi Progress</string>
+    <string name="sampai_dengan">Sampai Dengan</string>
 
     <string name="myticket">My Ticket</string>
-    <string name="approve">Approval</string>
+    <string name="approvalticket">Approval Ticket</string>
+    <string name="assigmenttikcet">Assigment Ticket</string>
     <string name="listticket">List Ticket</string>
 
     <string-array name="aplikasi">
         <item>--Akses Aplikasi--</item>
         <item>AST Desktop</item>
         <item>AST WEB</item>
+    </string-array>
+
+    <string-array name="progress">
+        <item>On Process</item>
+        <item>Completed</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
